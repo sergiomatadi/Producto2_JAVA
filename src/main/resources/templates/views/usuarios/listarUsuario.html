@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+</head>
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+
+	<div class="container">
+		<h1>Listado Usuarios</h1>
+		<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+			<a class="btn btn-success me-md-2" href="#">+</a>
+		</div>
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">DNI</th>
+					<th scope="col">Usuario</th>
+					<th scope="col">Email</th>
+					<th scope="col">Password</th>
+					<th colspan="3" scope="col">Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cl:${usuarios}">
+					<th scope="row" th:text="${cl.id}"></th>
+					<td th:text="${cl.nombre}"></td>
+					<td th:text="${cl.DNI}"></td>
+					<td th:text="${cl.usuario}"></td>
+					<td th:text="${cl.correo}"></td>
+					<td th:text="${cl.password}"></td>
+					<td width="10px"><a href="#" class="btn btn-warning btn-sm">Editar
+					</a>
+					<td width="10px">
+                <form action="#" method="post">
+            
+                <button type="submit" class="btn btn-danger btn-sm"onclick="return confirm('¿Quieres eliminar?')"> Borrar</button>
+                </form>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+	<footer th:replace="plantilla/template :: footer"></footer>
+</body>
+</html>

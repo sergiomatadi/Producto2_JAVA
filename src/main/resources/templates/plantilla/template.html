@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head th:fragment="head">
+<meta charset="UTF-8">
+<title>APP PARA CASA</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+
+	<!-- BARRA NAVEGACION -->
+	<header th:fragment="header">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" th:href="@{/}">CodersTeam</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link" th:href="@{/}">Home
+							<span class="sr-only">(current)</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Menus</a></li>
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+						role="button" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false"> Listados </a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" th:href="@{/menus}">Listado de
+								Menus</a> <a class="dropdown-item" th:href="@{/pedidos}">Listado
+								de Pedidos</a> <a class="dropdown-item"
+								th:href="@{/productos}">Listado de Productos</a> <a
+								class="dropdown-item" th:href="@{/tipos}">Listado de
+								Tipos</a> <a class="dropdown-item" th:href="@{/usuarios}">Listado
+								de Usuarios</a>
+
+
+						</div></li>
+
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar
+						ssesión</button>
+				</form>
+			</div>
+		</nav>
+
+	</header>
+	<!-- CONTENIDO -->
+	
+	<!-- PIE DE PAGINA -->
+	
+	<footer th:fragment="footer"
+		class="bg-dark text-center text-white fixed-bottom ">
+		<div class="container_footer">
+			<p>CODERSTEAM</p>
+		</div>
+		<script type="text/javascript"
+			th:src="@{/js/jquery-3.2.1.slim.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+	</footer>
+
+</body>
+</html>
